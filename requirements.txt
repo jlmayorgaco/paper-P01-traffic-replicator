@@ -1,0 +1,22 @@
+# Core scientific stack
+numpy>=1.26.0
+pandas>=2.0.0
+matplotlib>=3.8.0
+scipy>=1.11.0
+
+# Simulation / discrete-event
+simpy>=4.0.1
+
+# Jupyter / notebooks
+jupyter
+notebook
+ipykernel
+
+# Plotting enhancements
+seaborn>=0.13.0
+
+# Dev utilities
+tqdm>=4.65.0
+
+# Optional: for saving figures cleanly
+python-dotenv
