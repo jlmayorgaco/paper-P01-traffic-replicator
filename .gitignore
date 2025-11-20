@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.pdf
+*.bbl
+*.blg
+
+# OS
+.DS_Store
+Thumbs.db
