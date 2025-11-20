@@ -71,9 +71,6 @@ paper-P01-traffic-replicator-2025/
 ├── LICENSE
 └── README.md
 
-yaml
-Copiar código
-
 ---
 
 ## 📊 Method Summary
