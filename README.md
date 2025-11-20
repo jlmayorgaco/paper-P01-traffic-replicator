@@ -1,15 +1,10 @@
-# P01 — Distributed Traffic Light Control via Replicator Dynamics  
+# Distributed Traffic Light Control via Replicator Dynamics  
 ### Bio-Inspired Evolutionary Game Control for Urban Intersections  
 **Working Paper — 2025**
 
 ---
 
 ## 🧠 Overview
-This repository contains all the code, simulations, datasets, literature review,
-and LaTeX source files for the research paper:
-
-> **“Distributed Traffic Light Control via Replicator Dynamics:  
-> A Bio-Inspired Evolutionary Game Framework for Urban Intersections.”**
 
 The goal of this work is to design and evaluate a **fully decentralized**,  
 **adaptive**, and **mathematically grounded** traffic light controller based on  
