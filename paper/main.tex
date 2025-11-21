@@ -22,15 +22,13 @@
 % TITLE & AUTHOR
 % --------------------------------------------------------
 \title{
-Distributed Predictive-Consensus Replicator Dynamics (DPCRD)\\
-for Adaptive Multi-Intersection Traffic Signal Control:\\
-A Hybrid Python--SUMO Evaluation
+Distributed Evolutionary Control of Traffic Lights Using Predictive Replicator Dynamics with Homeostatic Learning
 }
 
 \author{
 \IEEEauthorblockN{Jorge Luis Mayorga}
 \IEEEauthorblockA{
-Email: jorge.mayorga@example.com \\ 
+Email: jl.mayorga236@uniandes.edu.co \\ 
 Distributed Control, Robotics \& Intelligent Transport Systems Researcher}
 }
 
@@ -40,68 +38,20 @@ Distributed Control, Robotics \& Intelligent Transport Systems Researcher}
 
 % --------------------------------------------------------
 \begin{abstract}
-This paper proposes a novel distributed traffic signal control framework based 
-on Predictive-Consensus Replicator Dynamics (DPCRD). Each intersection acts 
-as an autonomous evolutionary agent whose signal phases correspond to strategies 
-within a simplex. Phase proportions adapt through a replicator update integrating 
-(1) local queue and delay observations, (2) demand prediction, (3) consensus 
-coupling with neighboring intersections via the graph Laplacian, and (4) a 
-homeostatic learning-rate modulation based on congestion stress. The resulting 
-controller is completely decentralized, scalable, and robust to stochastic demand 
-fluctuations and sensor failures. Theoretical properties including simplex 
-invariance, boundedness, and consensus stability are derived. Extensive 
-evaluations are performed in both a custom Python simulator (1, 2, and 
-4-intersection networks) and a SUMO traffic simulation (3x3 grid). Comparisons 
-with fixed-time, semi-actuated, consensus-only, and max-pressure control 
-demonstrate significant improvements in delay, queue reduction, adaptability, 
-and emergent green-wave formation. 
+This paper introduces a novel fully-distributed traffic signal control framework based on \emph{Predictive-Consensus Replicator Dynamics} (DPCRD). In the proposed architecture, each intersection operates as an autonomous evolutionary agent whose signal-phase plans constitute strategies within a probability simplex. Phase proportions evolve through a replicator update that integrates: (1) real-time local observations of queue lengths and delay, (2) short-term demand prediction, (3) consensus coupling with neighboring intersections over the network graph Laplacian, and (4) a homeostatic modulation mechanism that adjusts the learning rate according to a congestion-induced stress signal. The resulting controller is decentralized, communication-efficient, and inherently robust to stochastic demand fluctuations, topology changes, and sensor degradation.
+
+Theoretical properties including simplex invariance, boundedness, and consensus-driven stability are established. The DPCRD framework is evaluated extensively in both a custom Python simulator (1-, 2-, and 4-intersection networks) and in SUMO on a 3×3 urban grid. Benchmark comparisons with fixed-time, semi-actuated, consensus-only, and max-pressure controllers demonstrate significant improvements in average delay, queue reduction, responsiveness to perturbations, and the emergence of coherent green-wave patterns without centralized coordination. These results highlight DPCRD as a biologically-inspired, scalable alternative for next-generation adaptive traffic control systems.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Traffic Signal Control, Distributed Control, Replicator Dynamics, Evolutionary Games, 
-Consensus, SUMO, Multi-Agent Systems, Intelligent Transportation.
+Distributed traffic signal control, replicator dynamics, evolutionary game theory, homeostatic learning, consensus control, graph-based coordination, demand prediction, green-wave formation, SUMO simulation, multi-agent systems.
 \end{IEEEkeywords}
 
 % --------------------------------------------------------
 \section{Introduction}
-Urban congestion continues to grow worldwide, creating challenges for classical 
-traffic signal controllers such as fixed-time plans and centralized adaptive 
-schemes. These approaches suffer from poor adaptability, vulnerability to failures, 
-and limited scalability. The increasing complexity of road networks motivates the 
-development of distributed, bio-inspired, and self-organizing control methods.
-
-This work introduces a distributed traffic controller based on \textit{Predictive-
-Consensus Replicator Dynamics} (DPCRD), where each intersection independently 
-adjusts the proportion of green time allocated to its phases using replicator 
-evolution guided by local and predicted traffic conditions.
 
 \subsection{Problem Statement}
-We consider urban networks where each intersection must:
-(i) adapt to stochastic traffic demand,
-(ii) operate without centralized supervision,
-(iii) coordinate with neighbors only minimally,
-(iv) remain robust under sensor failures and dynamic disturbances.
 
-\subsection{Contributions}
-This paper makes the following contributions:
-\begin{itemize}
-    \item \textbf{C1.} A novel distributed controller based on evolutionary 
-    replicator dynamics integrated with prediction, consensus, and homeostasis.
-    \item \textbf{C2.} A \textit{predictive payoff} structure using anticipated 
-    demand, improving responsiveness.
-    \item \textbf{C3.} A \textit{Laplacian-consensus} coupling enabling propagation 
-    of beneficial strategies across intersections.
-    \item \textbf{C4.} A \textit{homeostatic learning-rate adaptation} based on 
-    congestion stress.
-    \item \textbf{C5.} Theoretical properties including simplex invariance and 
-    consensus stability bounds.
-    \item \textbf{C6.} Hybrid Python--SUMO experiments across 1-, 2-, 4-, and 9-
-    intersection networks.
-    \item \textbf{C7.} Comparisons with fixed-time, semi-actuated, consensus-only, 
-    and max-pressure controllers.
-    \item \textbf{C8.} Robustness evaluation under stochastic arrivals and sensor 
-    failures.
-\end{itemize}
 
 % --------------------------------------------------------
 \section{Related Work}
@@ -225,6 +175,10 @@ We compare DPCRD with:
     \item Semi-actuated
     \item Consensus-only replicator
     \item Max-pressure control
+    \item MARL
+    \item PPO multiagente
+    \item A2C coordinado
+    \item GAT-DQN
 \end{itemize}
 
 \subsection{Performance Metrics}
